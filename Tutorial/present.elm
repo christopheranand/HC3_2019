@@ -1,4 +1,4 @@
--- copy this code into macoutreach.rocks and make a state chart
+-- copy this code into macoutreach.rocks and make a state diagram
 
 import Array
 
