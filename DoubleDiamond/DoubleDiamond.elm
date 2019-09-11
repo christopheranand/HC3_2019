@@ -6,7 +6,7 @@ import List
 
 myShapes model = [ 
                     text "Discover" |> filled red |> notifyTap (Clicked Discover)
-                   
+                   , group (List.map (\(x,y,deg) -> arrow |> rotate (degrees deg) |> move (x,y) ) [(-30,0,45)])
                  ]
                 ++ 
                     case model.state of 
@@ -35,6 +35,10 @@ txt stage lst =  group (List.indexedMap (\idx line -> text line
 cross = group [rect 2 7 |> filled red |> rotate (degrees 45)
                , rect 2 7 |> filled red |> rotate (degrees (-45)) 
                 ]
+
+arrow = group [rect 40 1 |> filled black 
+                , ngon 3 2 |> filled black |> move (20,0)
+                ] 
 
 strStage stage = case stage of 
                   Discover -> ["Discover", "stuff" ]
