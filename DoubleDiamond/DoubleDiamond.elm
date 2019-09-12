@@ -5,14 +5,23 @@ import GraphicSVG.EllieApp exposing (..)
 import List
 
 myShapes model = [ 
-                    text "Discover" |> filled red |> notifyTap (Clicked Discover)
-                   , group (List.map (\(x,y,deg) -> arrow |> rotate (degrees deg) |> move (x,y) ) [(-30,0,45)])
+                    text "Discover" |> size 5 |> filled red |> notifyTap (Clicked Discover)
+                    , text "define" |> size 5 |> filled pink 
+                        |> notifyTap (Clicked Define) |> move (-22,5)
+                   , diamond |> move (15,0)
+                   , diamond |> move (74,0)
+                   , text "Design the Right Thing" |> centered |> size 5 
+                        |> filled black |> addOutline (solid 0.2) black
+                        |> move (-28,40)
+                   , text "Design Things Right" |> centered |> size 5 
+                        |> filled black |> addOutline (solid 0.2) black
+                        |> move (28,40)
                  ]
                 ++ 
                     case model.state of 
-                        PopUp stage -> [rect 40 50 |> filled green 
+                        PopUp stage -> [rect 40 50 |> filled green |> makeTransparent 0.7
                                         , cross |> notifyTap Exit |> move (15,20)
-                                        , txt stage (strStage stage)
+                                        , txt (strStage stage)
                                       
                                         ]
 
@@ -26,7 +35,9 @@ type Msg = Tick Float GetKeyState
           | Clicked Stages 
           | Exit 
 
-txt stage lst =  group (List.indexedMap (\idx line -> text line 
+diamond = group (List.map (\(x,y,deg) -> arrow x y deg ) [(-60,20,45), (-60,-8,-45), (-30,22,-45),(-30,-10,45)])
+
+txt lst =  group (List.indexedMap (\idx line -> text line 
                                                         |> size 8 
                                                         |> centered 
                                                         |> filled black 
@@ -36,13 +47,13 @@ cross = group [rect 2 7 |> filled red |> rotate (degrees 45)
                , rect 2 7 |> filled red |> rotate (degrees (-45)) 
                 ]
 
-arrow = group [rect 40 1 |> filled black 
+arrow x y deg= group [rect 40 1 |> filled black 
                 , ngon 3 2 |> filled black |> move (20,0)
-                ] 
+                ] |> rotate (degrees deg) |> move (x,y)
 
 strStage stage = case stage of 
                   Discover -> ["Discover", "stuff" ]
-                  Define -> ["Define"]
+                  Define -> ["Define","cool"]
                   Develop -> ["Develop"]
                   Deliver -> ["Deliver"]
 
