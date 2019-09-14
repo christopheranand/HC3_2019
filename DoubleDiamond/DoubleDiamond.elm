@@ -5,61 +5,121 @@ import GraphicSVG.EllieApp exposing (..)
 import List
 
 myShapes model = [ 
-                    text "Discover" |> size 5 |> filled red |> notifyTap (Clicked Discover)
-                    , text "define" |> size 5 |> filled pink 
-                        |> notifyTap (Clicked Define) |> move (-22,5)
-                   , diamond |> move (15,0)
+                    diamond |> move (15,0)
                    , diamond |> move (74,0)
-                   , text "Design the Right Thing" |> centered |> size 5 
-                        |> filled black |> addOutline (solid 0.2) black
-                        |> move (-28,40)
-                   , text "Design Things Right" |> centered |> size 5 
-                        |> filled black |> addOutline (solid 0.2) black
-                        |> move (28,40)
-                 ]
+                   , textOnDiamond 
+                   , doubleArrow 27 19 "discover" Discover (-45,-30) |> move (-45,-30)
+                   , doubleArrow 27 14 "define" Define (-15,-30) |> move (-15,-30)
+                   , doubleArrow 27 18 "develop" Develop (15,-30) |> move (15,-30)
+                   , doubleArrow 27 15 "deliver" Deliver (45,-30)|> move (45,-30)
+                   , doubleArrow 36 23 "inspiration" Inspiration (-55,-40) |> move (-55,-40)
+                   , doubleArrow 53 18 "ideation" Ideation (-15,-40) |> move (-7,-40)
+                   , doubleArrow 45 33 "implementation" Implementation (15,-40) |> move (45,-40)
+                   ]
                 ++ 
                     case model.state of 
-                        PopUp stage -> [rect 40 50 |> filled green |> makeTransparent 0.7
-                                        , cross |> notifyTap Exit |> move (15,20)
-                                        , txt (strStage stage)
-                                      
-                                        ]
+                        PopUp stage (x,y)-> [card stage (x,y)
+                                              ]
 
                         otherwise -> []
 
-type State = NoPopUp | PopUp Stages  
+type State = NoPopUp | PopUp Stages (Float,Float)   
 
-type Stages = Discover | Define | Develop | Deliver 
+type Stages = Discover | Define | Develop | Deliver | Inspiration | Ideation | Implementation
 
 type Msg = Tick Float GetKeyState
-          | Clicked Stages 
+          | Clicked Stages (Float,Float)
           | Exit 
+
+card stage (x,y)= group [rect 40 45 |> filled green |> makeTransparent 0.9
+                                        , cross |> notifyTap Exit |> move (17,20)
+                                        , txt (strStage stage)
+                                      ] |> move (x,y)
 
 diamond = group (List.map (\(x,y,deg) -> arrow x y deg ) [(-60,20,45), (-60,-8,-45), (-30,22,-45),(-30,-10,45)])
 
 txt lst =  group (List.indexedMap (\idx line -> text line 
-                                                        |> size 8 
+                                                        |> size 6 
                                                         |> centered 
                                                         |> filled black 
-                                                        |> move (0,10-10*(toFloat idx))) lst)
+                                                        |> move (0,12-7*(toFloat idx))) lst)
 
-cross = group [rect 2 7 |> filled red |> rotate (degrees 45)
-               , rect 2 7 |> filled red |> rotate (degrees (-45)) 
+cross = group [rect 1 5 |> filled red |> rotate (degrees 45)
+               , rect 1 5 |> filled red |> rotate (degrees (-45)) 
                 ]
+curvedArrow = group [curve (-12,0) [Pull (0,-10) (12,0)] 
+                        |> outlined (solid 1) black
+                        |> move (2,-10)
+                   , ngon 3 2 |> filled black |> rotate (degrees (10))
+                      |> move (-10,-10)]
 
+doubleArrow len rectLen str stage (x,y)= group [rect len 1 |> filled black
+                        , ngon 3 2 |> filled black |> move ((len/2),0)
+                        , ngon 3 2 |> filled black |> rotate (degrees (180)) |> move ((-len/2),0)
+                        , rect rectLen 2 |> filled white
+                        , text str |> centered |> size 5 |> filled darkBlue 
+                            |> move (0,-1)
+                            |> notifyTap (Clicked stage (x,y) )
+                        ] 
 arrow x y deg= group [rect 40 1 |> filled black 
                 , ngon 3 2 |> filled black |> move (20,0)
                 ] |> rotate (degrees deg) |> move (x,y)
 
 strStage stage = case stage of 
-                  Discover -> ["Discover", "stuff" ]
-                  Define -> ["Define","cool"]
+                  Discover -> ["Discover", "the problem", "through", "interviewing", "the end user." ]
+                  Define -> ["Define","the right" , "problem through", "converging to", "an idea"]
                   Develop -> ["Develop"]
                   Deliver -> ["Deliver"]
+                  Inspiration -> ["Inspiration"]
+                  Ideation -> ["Ideation"]
+                  Implementation -> ["Implementation"]
+
+{-
+discovering the problem through empathizing
+and research, as well as defining the right problem, are 
+integral to the process. The develop stage involves
+developing prototype, testing, and iterating. Finally, 
+the deliver stage is when the product is finalized,
+produced, and launched
+-}
+
+textOnDiamond = group [ text "define" |> size 5 |> filled black 
+                         |> move (-22,5)
+                       , text "Design the Right Thing" |> centered |> size 5 
+                        |> filled black |> addOutline (solid 0.2) black
+                        |> move (-28,40)
+                   , text "Design Things Right" |> centered |> size 5 
+                        |> filled black |> addOutline (solid 0.2) black
+                        |> move (28,40)
+                   , text "diverge" |> size 5 |> filled black 
+                        |> rotate (degrees 45) |> move (-52,17)
+                   , text "converge" |> size 5 |> filled black 
+                        |> rotate (degrees (-45)) |> move (-20,31)  
+                   , text "diverge" |> size 5 |> filled black 
+                        |> rotate (degrees 45) |> move (7,17)
+                   , text "converge" |> size 5 |> filled black 
+                        |> rotate (degrees (-45)) |> move (39,31)  
+                   , text "research" |> size 5 |> filled black 
+                        |> rotate (degrees 45) |> move (-45,8) 
+                   , text "empathize" |> size 5 |> filled black 
+                         |> rotate (degrees (-45)) |> move (-45,2) 
+                   , text "ideate" |> size 5 |> filled black 
+                        |> rotate (degrees 45) |> move (14,8) 
+                   , text "prototype" |> size 5 |> filled black 
+                        |> rotate (degrees (-45)) |> move (14,2) 
+                   , text "validate" |> size 5 |> filled black 
+                         |> move (37,5)
+                   , text "frame" |> size 5 |> filled black 
+                         |> rotate (degrees 90) |> move (-67,0)
+                   , text "share" |> size 5 |> filled black 
+                         |> rotate (degrees 90) |> move (67,0)
+                   , curvedArrow
+                   , text "iterate" |> centered |> size 5 |> filled black |> move (2,-20)
+                ]
 
 update msg model = case msg of
                      Tick t _ -> { model | time = t }
-                     Clicked stage -> {model | state = PopUp stage }
+                     Clicked stage (x,y) -> {model | state = PopUp stage (x,y) }
                      Exit -> {model | state = NoPopUp }
 
 init = {time = 0, state = NoPopUp }
