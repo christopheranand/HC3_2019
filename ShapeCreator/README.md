@@ -2,7 +2,7 @@
 
 You should modify SinCreator.elm.
 
-It is called by BigShapeCreator.elm.
+It is called from Main.elm, but do not modify Main.elm.  Your submission must compile against the existing modules, with your new SinCreator.elm dropped in.
 
 Other modules can be referred to as examples.
 
