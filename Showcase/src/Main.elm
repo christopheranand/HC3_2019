@@ -97,7 +97,7 @@ import Grp1 as Grp39
 import Grp1 as Grp40
 import Grp1 as Grp41
 import Grp1 as Grp42
-import Grp1 as Grp43
+import Grp43
 import Grp1 as Grp44
 
 {-headerWeb Page Creator.-}
@@ -500,7 +500,53 @@ update msg model =
             otherwise ->
               (model,Cmd.none) -- got message from the wrong demo (impossible)
 
-        Tick t -> ({ model | time = t }, Cmd.none)
+        Tick t ->
+            case model.demo of
+              NoDemo -> ({ model | time = t }, Cmd.none)
+              Demo1 dModel -> let (newModel, newCmd) = Grp1.update (Grp1.Tick t) dModel in ({ model | demo = Demo1 newModel }, Cmd.map (DemoMsg << Demo1) newCmd)
+              Demo2 dModel -> let (newModel, newCmd) = Grp2.update (Grp2.Tick t) dModel in ({ model | demo = Demo2 newModel }, Cmd.map (DemoMsg << Demo2) newCmd)
+              Demo3 dModel -> let (newModel, newCmd) = Grp3.update (Grp3.Tick t) dModel in ({ model | demo = Demo3 newModel }, Cmd.map (DemoMsg << Demo3) newCmd)
+              Demo4 dModel -> let (newModel, newCmd) = Grp4.update (Grp4.Tick t) dModel in ({ model | demo = Demo4 newModel }, Cmd.map (DemoMsg << Demo4) newCmd)
+              Demo5 dModel -> let (newModel, newCmd) = Grp5.update (Grp5.Tick t) dModel in ({ model | demo = Demo5 newModel }, Cmd.map (DemoMsg << Demo5) newCmd)
+              Demo6 dModel -> let (newModel, newCmd) = Grp6.update (Grp6.Tick t) dModel in ({ model | demo = Demo6 newModel }, Cmd.map (DemoMsg << Demo6) newCmd)
+              Demo7 dModel -> let (newModel, newCmd) = Grp7.update (Grp7.Tick t) dModel in ({ model | demo = Demo7 newModel }, Cmd.map (DemoMsg << Demo7) newCmd)
+              Demo8 dModel -> let (newModel, newCmd) = Grp8.update (Grp8.Tick t) dModel in ({ model | demo = Demo8 newModel }, Cmd.map (DemoMsg << Demo8) newCmd)
+              Demo9 dModel -> let (newModel, newCmd) = Grp9.update (Grp9.Tick t) dModel in ({ model | demo = Demo9 newModel }, Cmd.map (DemoMsg << Demo9) newCmd)
+              Demo10 dModel -> let (newModel, newCmd) = Grp10.update (Grp10.Tick t) dModel in ({ model | demo = Demo10 newModel }, Cmd.map (DemoMsg << Demo10) newCmd)
+              Demo11 dModel -> let (newModel, newCmd) = Grp11.update (Grp11.Tick t) dModel in ({ model | demo = Demo11 newModel }, Cmd.map (DemoMsg << Demo11) newCmd)
+              Demo12 dModel -> let (newModel, newCmd) = Grp12.update (Grp12.Tick t) dModel in ({ model | demo = Demo12 newModel }, Cmd.map (DemoMsg << Demo12) newCmd)
+              Demo13 dModel -> let (newModel, newCmd) = Grp13.update (Grp13.Tick t) dModel in ({ model | demo = Demo13 newModel }, Cmd.map (DemoMsg << Demo13) newCmd)
+              Demo14 dModel -> let (newModel, newCmd) = Grp14.update (Grp14.Tick t) dModel in ({ model | demo = Demo14 newModel }, Cmd.map (DemoMsg << Demo14) newCmd)
+              Demo15 dModel -> let (newModel, newCmd) = Grp15.update (Grp15.Tick t) dModel in ({ model | demo = Demo15 newModel }, Cmd.map (DemoMsg << Demo15) newCmd)
+              Demo16 dModel -> let (newModel, newCmd) = Grp16.update (Grp16.Tick t) dModel in ({ model | demo = Demo16 newModel }, Cmd.map (DemoMsg << Demo16) newCmd)
+              Demo17 dModel -> let (newModel, newCmd) = Grp17.update (Grp17.Tick t) dModel in ({ model | demo = Demo17 newModel }, Cmd.map (DemoMsg << Demo17) newCmd)
+              Demo18 dModel -> let (newModel, newCmd) = Grp18.update (Grp18.Tick t) dModel in ({ model | demo = Demo18 newModel }, Cmd.map (DemoMsg << Demo18) newCmd)
+              Demo19 dModel -> let (newModel, newCmd) = Grp19.update (Grp19.Tick t) dModel in ({ model | demo = Demo19 newModel }, Cmd.map (DemoMsg << Demo19) newCmd)
+              Demo20 dModel -> let (newModel, newCmd) = Grp20.update (Grp20.Tick t) dModel in ({ model | demo = Demo20 newModel }, Cmd.map (DemoMsg << Demo20) newCmd)
+              Demo21 dModel -> let (newModel, newCmd) = Grp21.update (Grp21.Tick t) dModel in ({ model | demo = Demo21 newModel }, Cmd.map (DemoMsg << Demo21) newCmd)
+              Demo22 dModel -> let (newModel, newCmd) = Grp22.update (Grp22.Tick t) dModel in ({ model | demo = Demo22 newModel }, Cmd.map (DemoMsg << Demo22) newCmd)
+              Demo23 dModel -> let (newModel, newCmd) = Grp23.update (Grp23.Tick t) dModel in ({ model | demo = Demo23 newModel }, Cmd.map (DemoMsg << Demo23) newCmd)
+              Demo24 dModel -> let (newModel, newCmd) = Grp24.update (Grp24.Tick t) dModel in ({ model | demo = Demo24 newModel }, Cmd.map (DemoMsg << Demo24) newCmd)
+              Demo25 dModel -> let (newModel, newCmd) = Grp25.update (Grp25.Tick t) dModel in ({ model | demo = Demo25 newModel }, Cmd.map (DemoMsg << Demo25) newCmd)
+              Demo26 dModel -> let (newModel, newCmd) = Grp26.update (Grp26.Tick t) dModel in ({ model | demo = Demo26 newModel }, Cmd.map (DemoMsg << Demo26) newCmd)
+              Demo27 dModel -> let (newModel, newCmd) = Grp27.update (Grp27.Tick t) dModel in ({ model | demo = Demo27 newModel }, Cmd.map (DemoMsg << Demo27) newCmd)
+              Demo28 dModel -> let (newModel, newCmd) = Grp28.update (Grp28.Tick t) dModel in ({ model | demo = Demo28 newModel }, Cmd.map (DemoMsg << Demo28) newCmd)
+              Demo29 dModel -> let (newModel, newCmd) = Grp29.update (Grp29.Tick t) dModel in ({ model | demo = Demo29 newModel }, Cmd.map (DemoMsg << Demo29) newCmd)
+              Demo30 dModel -> let (newModel, newCmd) = Grp30.update (Grp30.Tick t) dModel in ({ model | demo = Demo30 newModel }, Cmd.map (DemoMsg << Demo30) newCmd)
+              Demo31 dModel -> let (newModel, newCmd) = Grp31.update (Grp31.Tick t) dModel in ({ model | demo = Demo31 newModel }, Cmd.map (DemoMsg << Demo31) newCmd)
+              Demo32 dModel -> let (newModel, newCmd) = Grp32.update (Grp32.Tick t) dModel in ({ model | demo = Demo32 newModel }, Cmd.map (DemoMsg << Demo32) newCmd)
+              Demo33 dModel -> let (newModel, newCmd) = Grp33.update (Grp33.Tick t) dModel in ({ model | demo = Demo33 newModel }, Cmd.map (DemoMsg << Demo33) newCmd)
+              Demo34 dModel -> let (newModel, newCmd) = Grp34.update (Grp34.Tick t) dModel in ({ model | demo = Demo34 newModel }, Cmd.map (DemoMsg << Demo34) newCmd)
+              Demo35 dModel -> let (newModel, newCmd) = Grp35.update (Grp35.Tick t) dModel in ({ model | demo = Demo35 newModel }, Cmd.map (DemoMsg << Demo35) newCmd)
+              Demo36 dModel -> let (newModel, newCmd) = Grp36.update (Grp36.Tick t) dModel in ({ model | demo = Demo36 newModel }, Cmd.map (DemoMsg << Demo36) newCmd)
+              Demo37 dModel -> let (newModel, newCmd) = Grp37.update (Grp37.Tick t) dModel in ({ model | demo = Demo37 newModel }, Cmd.map (DemoMsg << Demo37) newCmd)
+              Demo38 dModel -> let (newModel, newCmd) = Grp38.update (Grp38.Tick t) dModel in ({ model | demo = Demo38 newModel }, Cmd.map (DemoMsg << Demo38) newCmd)
+              Demo39 dModel -> let (newModel, newCmd) = Grp39.update (Grp39.Tick t) dModel in ({ model | demo = Demo39 newModel }, Cmd.map (DemoMsg << Demo39) newCmd)
+              Demo40 dModel -> let (newModel, newCmd) = Grp40.update (Grp40.Tick t) dModel in ({ model | demo = Demo40 newModel }, Cmd.map (DemoMsg << Demo40) newCmd)
+              Demo41 dModel -> let (newModel, newCmd) = Grp41.update (Grp41.Tick t) dModel in ({ model | demo = Demo41 newModel }, Cmd.map (DemoMsg << Demo41) newCmd)
+              Demo42 dModel -> let (newModel, newCmd) = Grp42.update (Grp42.Tick t) dModel in ({ model | demo = Demo42 newModel }, Cmd.map (DemoMsg << Demo42) newCmd)
+              Demo43 dModel -> let (newModel, newCmd) = Grp43.update (Grp43.Tick t) dModel in ({ model | demo = Demo43 newModel }, Cmd.map (DemoMsg << Demo43) newCmd)
+              Demo44 dModel -> let (newModel, newCmd) = Grp44.update (Grp44.Tick t) dModel in ({ model | demo = Demo44 newModel }, Cmd.map (DemoMsg << Demo44) newCmd)
 
 urlUpdate : Url -> Model -> ( Model, Cmd Msg )
 urlUpdate url model =

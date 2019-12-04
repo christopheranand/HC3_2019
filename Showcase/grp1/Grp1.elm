@@ -1,6 +1,6 @@
 {-
 -}
-module Grp1 exposing (Model,view,update,Msg,init,keywords,title,authors)
+module Grp1 exposing (Model,view,update,Msg(..),init,keywords,title,authors)
 
 --import Debug
 
