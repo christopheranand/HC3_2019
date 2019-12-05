@@ -79,7 +79,7 @@ import Grp1 as Grp21
 import Grp1 as Grp22
 import Grp1 as Grp23
 import Grp1 as Grp24
-import Grp1 as Grp25
+import Grp25
 import Grp1 as Grp26
 import Grp1 as Grp27
 import Grp1 as Grp28
@@ -135,51 +135,51 @@ page model =
                         { id = "prototypes"
                         , toggle = Navbar.dropdownToggle [] [ Html.text "prototypes" ]
                         , items =
-                            [ Navbar.dropdownItem [ onClick (GoTo (Demo1 ())) ] [ Html.text "group 1" ]
-                            -- Prelude> putStrLn $ concat ["Navbar.dropdownItem [ onClick (GoTo (Demo"++show i++" ())) ] [ Html.text \"group "++show i++"\" ]\n                            , " | i <- [2..44]]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo2 ())) ] [ Html.text "group 2" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo3 ())) ] [ Html.text "group 3" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo4 ())) ] [ Html.text "group 4" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo5 ())) ] [ Html.text "group 5" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo6 ())) ] [ Html.text "group 6" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo7 ())) ] [ Html.text "group 7" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo8 ())) ] [ Html.text "group 8" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo9 ())) ] [ Html.text "group 9" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo10 ())) ] [ Html.text "group 10" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo11 ())) ] [ Html.text "group 11" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo12 ())) ] [ Html.text "group 12" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo13 ())) ] [ Html.text "group 13" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo14 ())) ] [ Html.text "group 14" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo15 ())) ] [ Html.text "group 15" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo16 ())) ] [ Html.text "group 16" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo17 ())) ] [ Html.text "group 17" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo18 ())) ] [ Html.text "group 18" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo19 ())) ] [ Html.text "group 19" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo20 ())) ] [ Html.text "group 20" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo21 ())) ] [ Html.text "group 21" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo22 ())) ] [ Html.text "group 22" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo23 ())) ] [ Html.text "group 23" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo24 ())) ] [ Html.text "group 24" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo25 ())) ] [ Html.text "group 25" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo26 ())) ] [ Html.text "group 26" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo27 ())) ] [ Html.text "group 27" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo28 ())) ] [ Html.text "group 28" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo29 ())) ] [ Html.text "group 29" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo30 ())) ] [ Html.text "group 30" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo31 ())) ] [ Html.text "group 31" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo32 ())) ] [ Html.text "group 32" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo33 ())) ] [ Html.text "group 33" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo34 ())) ] [ Html.text "group 34" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo35 ())) ] [ Html.text "group 35" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo36 ())) ] [ Html.text "group 36" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo37 ())) ] [ Html.text "group 37" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo38 ())) ] [ Html.text "group 38" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo39 ())) ] [ Html.text "group 39" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo40 ())) ] [ Html.text "group 40" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo41 ())) ] [ Html.text "group 41" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo42 ())) ] [ Html.text "group 42" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo43 ())) ] [ Html.text "group 43" ]
-                            , Navbar.dropdownItem [ onClick (GoTo (Demo44 ())) ] [ Html.text "group 44" ]
+                            [ Navbar.dropdownItem [ onClick (GoTo (Demo1 model.navKey)) ] [ Html.text "group 1" ]
+                            -- Prelude> putStrLn $ concat ["Navbar.dropdownItem [ onClick (GoTo (Demo"++show i++" model.navKey)) ] [ Html.text \"group "++show i++"\" ]\n                            , " | i <- [2..44]]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo2 model.navKey)) ] [ Html.text "group 2" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo3 model.navKey)) ] [ Html.text "group 3" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo4 model.navKey)) ] [ Html.text "group 4" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo5 model.navKey)) ] [ Html.text "group 5" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo6 model.navKey)) ] [ Html.text "group 6" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo7 model.navKey)) ] [ Html.text "group 7" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo8 model.navKey)) ] [ Html.text "group 8" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo9 model.navKey)) ] [ Html.text "group 9" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo10 model.navKey)) ] [ Html.text "group 10" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo11 model.navKey)) ] [ Html.text "group 11" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo12 model.navKey)) ] [ Html.text "group 12" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo13 model.navKey)) ] [ Html.text "group 13" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo14 model.navKey)) ] [ Html.text "group 14" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo15 model.navKey)) ] [ Html.text "group 15" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo16 model.navKey)) ] [ Html.text "group 16" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo17 model.navKey)) ] [ Html.text "group 17" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo18 model.navKey)) ] [ Html.text "group 18" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo19 model.navKey)) ] [ Html.text "group 19" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo20 model.navKey)) ] [ Html.text "group 20" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo21 model.navKey)) ] [ Html.text "group 21" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo22 model.navKey)) ] [ Html.text "group 22" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo23 model.navKey)) ] [ Html.text "group 23" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo24 model.navKey)) ] [ Html.text "group 24" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo25 model.navKey)) ] [ Html.text "group 25" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo26 model.navKey)) ] [ Html.text "group 26" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo27 model.navKey)) ] [ Html.text "group 27" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo28 model.navKey)) ] [ Html.text "group 28" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo29 model.navKey)) ] [ Html.text "group 29" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo30 model.navKey)) ] [ Html.text "group 30" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo31 model.navKey)) ] [ Html.text "group 31" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo32 model.navKey)) ] [ Html.text "group 32" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo33 model.navKey)) ] [ Html.text "group 33" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo34 model.navKey)) ] [ Html.text "group 34" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo35 model.navKey)) ] [ Html.text "group 35" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo36 model.navKey)) ] [ Html.text "group 36" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo37 model.navKey)) ] [ Html.text "group 37" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo38 model.navKey)) ] [ Html.text "group 38" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo39 model.navKey)) ] [ Html.text "group 39" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo40 model.navKey)) ] [ Html.text "group 40" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo41 model.navKey)) ] [ Html.text "group 41" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo42 model.navKey)) ] [ Html.text "group 42" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo43 model.navKey)) ] [ Html.text "group 43" ]
+                            , Navbar.dropdownItem [ onClick (GoTo (Demo44 model.navKey)) ] [ Html.text "group 44" ]
                             ]
                         }
                     ]
@@ -263,6 +263,7 @@ type alias Model =
     , page : Page
     , time : Float
     , navState : Navbar.State
+    , url : Url
     -- PUT YOUR MODEL VALUES HERE
     , widget0 : Widget.Model -- contains state about display of widget
     , demo : Demo Grp1.Model
@@ -306,7 +307,7 @@ type Msg
 
     | Widget0Msg (Widget.Msg)
 
-    | GoTo (Demo  () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () )
+    | GoTo (Demo  Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key Navigation.Key )
 
     | DemoMsg (Demo Grp1.Msg
     --Prelude> putStrLn $ concat [" Grp"++show i++".Msg" | i <- [2..44]]
@@ -332,6 +333,7 @@ init flags url key =
                           , navState = navState
                           , page = Home
                           , time = 0
+                          , url = url
                           , widget0 = wstate0
                           , demo = NoDemo
                           , slope = Nothing
@@ -421,7 +423,7 @@ update msg model =
             Demo22 _ -> let (demoModel, demoCmd) = Grp22.init in ( { model | demo = Demo22 demoModel}, Cmd.map (DemoMsg << Demo22) demoCmd)
             Demo23 _ -> let (demoModel, demoCmd) = Grp23.init in ( { model | demo = Demo23 demoModel}, Cmd.map (DemoMsg << Demo23) demoCmd)
             Demo24 _ -> let (demoModel, demoCmd) = Grp24.init in ( { model | demo = Demo24 demoModel}, Cmd.map (DemoMsg << Demo24) demoCmd)
-            Demo25 _ -> let (demoModel, demoCmd) = Grp25.init in ( { model | demo = Demo25 demoModel}, Cmd.map (DemoMsg << Demo25) demoCmd)
+            Demo25 key -> let (demoModel, demoCmd) = Grp25.init key model.url in ( { model | demo = Demo25 demoModel}, Cmd.map (DemoMsg << Demo25) demoCmd)
             Demo26 _ -> let (demoModel, demoCmd) = Grp26.init in ( { model | demo = Demo26 demoModel}, Cmd.map (DemoMsg << Demo26) demoCmd)
             Demo27 _ -> let (demoModel, demoCmd) = Grp27.init in ( { model | demo = Demo27 demoModel}, Cmd.map (DemoMsg << Demo27) demoCmd)
             Demo28 _ -> let (demoModel, demoCmd) = Grp28.init in ( { model | demo = Demo28 demoModel}, Cmd.map (DemoMsg << Demo28) demoCmd)
