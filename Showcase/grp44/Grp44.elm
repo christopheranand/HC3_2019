@@ -1,18 +1,15 @@
 -- change your group number TODO
 
 
-module Grp43 exposing (Model, Msg(..), authors, init, keywords, title, update, view)
+module Grp44 exposing (Model, Msg(..), authors, init, keywords, title, update, view)
 
 -- change to your group number TODO
 
-import GameSlot43 as GameSlot
+import GameSlot44 as GameSlot
 import GraphicSVG exposing (..)
 import GraphicSVG.Widget as Widget
 import Html exposing (Html)
 import Html.Attributes exposing (..)
-import List
-import String
-import Dict exposing (Dict)
 
 
 
@@ -31,7 +28,8 @@ title =
 
 authors : List String
 authors =
-    [ "Max Mercer", "Gregory Kitching", "Koushik Ghosh" ]
+    [ "Yousaf Shaheen", "Thomas Dystra", "Sandeep Arumainayagam", "Aly Shah Imtiaz"
+     ]
 
 
 

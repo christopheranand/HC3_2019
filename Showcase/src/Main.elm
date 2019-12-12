@@ -65,7 +65,7 @@ import Grp1 as Grp7
 import Grp1 as Grp8
 import Grp1 as Grp9
 import Grp1 as Grp10
-import Grp1 as Grp11
+import Grp11
 import Grp1 as Grp12
 import Grp1 as Grp13
 import Grp1 as Grp14
@@ -75,7 +75,7 @@ import Grp1 as Grp17
 import Grp1 as Grp18
 import Grp1 as Grp19
 import Grp1 as Grp20
-import Grp1 as Grp21
+import Grp21
 import Grp1 as Grp22
 import Grp1 as Grp23
 import Grp1 as Grp24
@@ -98,7 +98,7 @@ import Grp1 as Grp40
 import Grp1 as Grp41
 import Grp1 as Grp42
 import Grp43
-import Grp1 as Grp44
+import Grp44
 
 {-headerWeb Page Creator.-}
 
@@ -409,7 +409,7 @@ update msg model =
             Demo8 _ -> let (demoModel, demoCmd) = Grp8.init in ( { model | demo = Demo8 demoModel}, Cmd.map (DemoMsg << Demo8) demoCmd)
             Demo9 _ -> let (demoModel, demoCmd) = Grp9.init in ( { model | demo = Demo9 demoModel}, Cmd.map (DemoMsg << Demo9) demoCmd)
             Demo10 _ -> let (demoModel, demoCmd) = Grp10.init in ( { model | demo = Demo10 demoModel}, Cmd.map (DemoMsg << Demo10) demoCmd)
-            Demo11 _ -> let (demoModel, demoCmd) = Grp11.init in ( { model | demo = Demo11 demoModel}, Cmd.map (DemoMsg << Demo11) demoCmd)
+            Demo11 key -> let (demoModel, demoCmd) = Grp11.init key model.url in ( { model | demo = Demo11 demoModel}, Cmd.map (DemoMsg << Demo11) demoCmd)
             Demo12 _ -> let (demoModel, demoCmd) = Grp12.init in ( { model | demo = Demo12 demoModel}, Cmd.map (DemoMsg << Demo12) demoCmd)
             Demo13 _ -> let (demoModel, demoCmd) = Grp13.init in ( { model | demo = Demo13 demoModel}, Cmd.map (DemoMsg << Demo13) demoCmd)
             Demo14 _ -> let (demoModel, demoCmd) = Grp14.init in ( { model | demo = Demo14 demoModel}, Cmd.map (DemoMsg << Demo14) demoCmd)
@@ -419,7 +419,7 @@ update msg model =
             Demo18 _ -> let (demoModel, demoCmd) = Grp18.init in ( { model | demo = Demo18 demoModel}, Cmd.map (DemoMsg << Demo18) demoCmd)
             Demo19 _ -> let (demoModel, demoCmd) = Grp19.init in ( { model | demo = Demo19 demoModel}, Cmd.map (DemoMsg << Demo19) demoCmd)
             Demo20 _ -> let (demoModel, demoCmd) = Grp20.init in ( { model | demo = Demo20 demoModel}, Cmd.map (DemoMsg << Demo20) demoCmd)
-            Demo21 _ -> let (demoModel, demoCmd) = Grp21.init in ( { model | demo = Demo21 demoModel}, Cmd.map (DemoMsg << Demo21) demoCmd)
+            Demo21 key -> let (demoModel, demoCmd) = Grp21.init key model.url in ( { model | demo = Demo21 demoModel}, Cmd.map (DemoMsg << Demo21) demoCmd)
             Demo22 _ -> let (demoModel, demoCmd) = Grp22.init in ( { model | demo = Demo22 demoModel}, Cmd.map (DemoMsg << Demo22) demoCmd)
             Demo23 _ -> let (demoModel, demoCmd) = Grp23.init in ( { model | demo = Demo23 demoModel}, Cmd.map (DemoMsg << Demo23) demoCmd)
             Demo24 _ -> let (demoModel, demoCmd) = Grp24.init in ( { model | demo = Demo24 demoModel}, Cmd.map (DemoMsg << Demo24) demoCmd)

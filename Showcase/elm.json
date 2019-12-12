@@ -4,8 +4,11 @@
         "src",
         "grp1",
         "grp2",
+        "grp11",
+        "grp21",
         "grp25",
-        "grp43"
+        "grp43",
+        "grp44"
     ],
     "elm-version": "0.19.1",
     "dependencies": {
