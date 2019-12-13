@@ -80,7 +80,7 @@ import Grp1 as Grp22
 import Grp1 as Grp23
 import Grp1 as Grp24
 import Grp25
-import Grp1 as Grp26
+import Grp26
 import Grp1 as Grp27
 import Grp1 as Grp28
 import Grp1 as Grp29
@@ -424,7 +424,7 @@ update msg model =
             Demo23 _ -> let (demoModel, demoCmd) = Grp23.init in ( { model | demo = Demo23 demoModel}, Cmd.map (DemoMsg << Demo23) demoCmd)
             Demo24 _ -> let (demoModel, demoCmd) = Grp24.init in ( { model | demo = Demo24 demoModel}, Cmd.map (DemoMsg << Demo24) demoCmd)
             Demo25 key -> let (demoModel, demoCmd) = Grp25.init key model.url in ( { model | demo = Demo25 demoModel}, Cmd.map (DemoMsg << Demo25) demoCmd)
-            Demo26 _ -> let (demoModel, demoCmd) = Grp26.init in ( { model | demo = Demo26 demoModel}, Cmd.map (DemoMsg << Demo26) demoCmd)
+            Demo26 key -> let (demoModel, demoCmd) = Grp26.init key model.url in ( { model | demo = Demo26 demoModel}, Cmd.map (DemoMsg << Demo26) demoCmd)
             Demo27 _ -> let (demoModel, demoCmd) = Grp27.init in ( { model | demo = Demo27 demoModel}, Cmd.map (DemoMsg << Demo27) demoCmd)
             Demo28 _ -> let (demoModel, demoCmd) = Grp28.init in ( { model | demo = Demo28 demoModel}, Cmd.map (DemoMsg << Demo28) demoCmd)
             Demo29 _ -> let (demoModel, demoCmd) = Grp29.init in ( { model | demo = Demo29 demoModel}, Cmd.map (DemoMsg << Demo29) demoCmd)
